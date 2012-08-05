@@ -1,0 +1,162 @@
+body{
+   background-color: black;
+   background-image: url('grid.png');
+   color: white;
+   font-family: Impact;
+}
+.contents{
+   width: 100%;
+   height: 100%;
+   display: block;
+
+   position: absolute;
+   left: 0px;
+   top: 0px;
+}
+.contents{
+   background: -moz-radial-gradient(center, ellipse cover,  rgba(53,53,53,0.7) 0%, rgba(0,0,0,0.95) 85%); /* FF3.6+ */
+   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(53,53,53,0.7)), color-stop(85%,rgba(0,0,0,0.95))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(center, ellipse cover,  rgba(53,53,53,0.7) 0%,rgba(0,0,0,0.95) 85%); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(center, ellipse cover,  rgba(53,53,53,0.7) 0%,rgba(0,0,0,0.95) 85%); /* Opera 12+ */
+   background: -ms-radial-gradient(center, ellipse cover,  rgba(53,53,53,0.7) 0%,rgba(0,0,0,0.95) 85%); /* IE10+ */
+   background: radial-gradient(center, ellipse cover,  rgba(53,53,53,0.7) 0%,rgba(0,0,0,0.95) 85%); /* W3C */
+}
+
+
+.nav-cont{
+   float: left;
+   position: absolute;
+   top: 50%;
+   padding-left: 50px;
+}
+.nav{
+   margin-top: -100%;
+}
+.nav>*{
+   display: block;
+   margin-top: 5px;
+   margin-bottom: 10px;
+}
+.nav>*:after{
+   display: block;
+   content: '';
+   margin-left: -50px; /* Remove this if you want the underlinement to be left-aligned to the beginning of the conetnt (the text) */
+   height: 2px;
+
+   background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+   background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(70%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+   background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+   background: -o-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+   background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0) 100%); /* IE10+ */
+   background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 70%,rgba(255,255,255,0) 100%); /* W3C */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
+
+   width: 0;
+
+   transition: width 1s;
+   -moz-transition: width 1s; /* Firefox 4 */
+   -webkit-transition: width 1s; /* Safari and Chrome */
+   -o-transition: width 1s;
+}
+.nav>*:hover:after{
+   /* width: 100%; */
+   width: 150%; /* The negative left margin moves the underlinement left so we need it to be bigger to be able to reach the right end of the content (the text) */
+}
+
+
+a{
+   color: white;
+   text-decoration: none;
+}
+
+
+.logo{
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   width: 40%;
+   max-width: 450px;
+   text-align: center;
+}
+.logo big{
+   text-transform: uppercase;
+   font-size: 3em;
+}
+
+
+.content{
+   display: inline-block;
+   background-color: #2f2f2f;
+   padding: 5px;
+}
+.content .title{
+   position: relative;
+}
+
+.content .image{
+   display: block;
+   margin: 5px;
+
+   max-width: 400px;
+   max-height: 500px;
+   /*
+   border: 10px solid #2f2f2f;
+   border-top-width: 30px;
+   margin-top: -25px;
+   */
+}
+.arrow{
+   display: inline-block;
+   width: 25px;
+   height: 25px;
+   margin-bottom: -25px;
+   margin-top: -80%;
+   border-radius: 25px;
+   border: 2px solid black;
+   background-color: #525252;
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+.arrow.left{
+   float: left;
+   background-image: url('larr.png');
+   margin-left: -40px;
+}
+.arrow.right{
+   float: right;
+   margin-right: -40px;
+   background-image: url('rarr.png');
+}
+
+
+.footer{
+   position: absolute;
+   bottom: 0px;
+   left: 0px;
+   width: 100%;
+
+   padding-top: 10px;
+   padding-bottom: 5px;
+}
+.footer{
+   background: -moz-radial-gradient(center bottom, ellipse cover,  rgba(41, 41, 41, 1) 0%, rgba(41, 41, 41, 1) 50% , rgba(41, 41, 41, 0) 85%); /* FF3.6+ */
+   background: -webkit-gradient(radial, center bottom, 0px, center bottom, 100%, color-stop(0%,rgba(41, 41, 41, 1)), color-stop(50%,rgba(41, 41, 41, 1)), color-stop(85%,rgba(41, 41, 41, 0))); /* Chrome,Safari4+ */
+   background: -webkit-radial-gradient(center bottom, ellipse cover,  rgba(41, 41, 41, 1) 0%, rgba(41, 41, 41, 1) 50%, rgba(41, 41, 41, 0) 85%); /* Chrome10+,Safari5.1+ */
+   background: -o-radial-gradient(center bottom, ellipse cover,  rgba(41, 41, 41, 1) 0%, rgba(41, 41, 41, 1) 50%, rgba(41, 41, 41, 0) 85%); /* Opera 12+ */
+   background: -ms-radial-gradient(center bottom, ellipse cover,  rgba(41, 41, 41, 1) 0%, rgba(41, 41, 41, 1) 50%, rgba(41, 41, 41, 0) 85%); /* IE10+ */
+   background: radial-gradient(center bottom, ellipse cover,  rgba(41, 41, 41, 1) 0%, rgba(41, 41, 41, 1) 50%, rgba(41, 41, 41, 0) 85%); /* W3C */
+}
+.footer .col{
+   display: inline-block;
+   width: 30%;
+   text-align: center;
+   margin-left: 1.5%;
+   margin-right: 1.5%;
+}
+.footer .col.left{
+   text-align: right;
+}
+.footer .col.right{
+   text-align: left;
+}
