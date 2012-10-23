@@ -92,14 +92,15 @@ a{
 }
 .content .title{
    position: relative;
+   text-align: center;
 }
 
 .content .image{
    display: block;
    margin: 5px;
 
-   max-width: 400px;
-   max-height: 500px;
+   max-width: 800px;
+   max-height: 550px;
    /*
    border: 10px solid #2f2f2f;
    border-top-width: 30px;
@@ -110,8 +111,6 @@ a{
    display: inline-block;
    width: 25px;
    height: 25px;
-   margin-bottom: -25px;
-   margin-top: -80%;
    border-radius: 25px;
    border: 2px solid black;
    background-color: #525252;
@@ -119,14 +118,48 @@ a{
    background-repeat: no-repeat;
 }
 .arrow.left{
-   float: left;
    background-image: url('larr.png');
+}
+.arrow.lifted.left{
+   margin-top: -200px;
+   margin-bottom: -25px;
+
+   float: left;
    margin-left: -40px;
 }
 .arrow.right{
+   background-image: url('rarr.png');
+}
+.arrow.lifted.right{
+   margin-top: -200px;
+   margin-bottom: -25px;
+
    float: right;
    margin-right: -40px;
-   background-image: url('rarr.png');
+}
+.arrow.disabled{
+   opacity: 0.5;
+}
+
+.shadow.content{
+   display: none;
+}
+.shadow.content{
+   opacity: 0.5;
+}
+#preview_0{
+   position:absolute;
+   top:  3%;
+   left: 3%;
+}
+#preview_1{
+   position:absolute;
+   bottom:  8%;
+   right: 3%;
+}
+#nav.outstaged a:hover{
+   position: relative;
+   z-index: 2;
 }
 
 

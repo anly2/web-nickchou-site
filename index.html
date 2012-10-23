@@ -1,8 +1,10 @@
 <html>
 <head>
-   <title>Test</title>
+   <title>Nickchou's Portfolio</title>
    <link rel="stylesheet" href="main.css" />
 
+   <script type="text/javascript" src="images.js"></script>
+   <script type="text/javascript" src="preview.js"></script>
 </head>
 <body>
 
@@ -14,15 +16,15 @@
    </div>
 
    <div class="nav-cont">
-      <div class="nav">
-         <a href="?web#1"      onmouseover="preview('web#1');">     Web Designs</a>
-         <a href="?brochure#1" onmouseover="preview('brochure#1');">Brochure Designs</a>
-         <a href="?poster#1"   onmouseover="preview('poster#1');">  Poster Designs</a>
-         <a href="?flyer#1"    onmouseover="preview('flyer#1');">   Flyer Designs</a>
-         <a href="?book#1"     onmouseover="preview('book#1');">    Book Designs</a>
-         <a href="?magazine#1" onmouseover="preview('magazine#1');">Magazine Designs</a>
-         <a href="?business#1" onmouseover="preview('business#1');">Business Card Designs</a>
-         <a href="?other#1"    onmouseover="preview('other#1');">   Other</a>
+      <div class="nav" id="nav">
+         <a href="?web:0"      onmouseover="preview('web:0');"      onmouseout="fade();">Web Designs</a>
+         <a href="?brochure:0" onmouseover="preview('brochure:0');" onmouseout="fade();">Brochure Designs</a>
+         <a href="?poster:0"   onmouseover="preview('poster:0');"   onmouseout="fade();">Poster Designs</a>
+         <a href="?flyer:0"    onmouseover="preview('flyer:0');"    onmouseout="fade();">Flyer Designs</a>
+         <a href="?book:0"     onmouseover="preview('book:0');"     onmouseout="fade();">Book Designs</a>
+         <a href="?magazine:0" onmouseover="preview('magazine:0');" onmouseout="fade();">Magazine Designs</a>
+         <a href="?business:0" onmouseover="preview('business:0');" onmouseout="fade();">Business Card Designs</a>
+         <a href="?other:0"    onmouseover="preview('other:0');"    onmouseout="fade();">Other</a>
       </div>
    </div>
 
@@ -30,14 +32,27 @@
       <tr>
          <td width="100%" height="100%" align="center" valign="middle">
             <div class="content">
-               <div class="title" id="content:title">Phoenix Poster</div>
-               <img class="image" id="content:image" src="phnx.jpg" />
-               <span class="arrow left"></span>
-               <span class="arrow right"></span>
+               <div class="title" id="content:title"></div> <!--Phoenix Poster-->
+               <img class="image" id="content:image" />  <!--src="phnx.jpg" -->
+               <a class="arrow left"  id="content:previous"></a>
+               <a class="arrow right" id="content:next"></a>
             </div>
          </td>
       </tr>
    </table>
+
+   <!-- Previews -->
+   <div class="shadow content" id="preview_0">
+      <div class="title" id="preview_0:title"></div>
+      <img class="image" id="preview_0:image" />
+   </div>
+
+   <div class="shadow content" id="preview_1">
+      <div class="title" id="preview_1:title"></div>
+      <img class="image" id="preview_1:image" />
+   </div>
+   <!-- End of Previews -->
+
 
 </div>
 
@@ -48,4 +63,27 @@
 </div>
 
 </body>
+<script type="text/javascript">
+   var cat = category();
+   var ofs = offset();
+   var img = images[category()][offset()];
+
+   if(typeof img == 'undefined')
+      window.location.href = "?";
+
+
+   if(typeof images[cat][ofs-1] != 'undefined')
+      document.getElementById("content:previous").setAttribute('href', "?"+cat+":"+(ofs-1) );
+   else
+      document.getElementById("content:previous").className += " disabled";
+
+   if(typeof images[cat][ofs-(-1)] != 'undefined')
+      document.getElementById("content:next").setAttribute('href', "?"+cat+":"+(ofs-(-1)) );
+   else
+      document.getElementById("content:next").className += " disabled";
+
+
+   document.getElementById("content:title").innerHTML = img.title;
+   document.getElementById("content:image").src = img.src;
+</script>
 </html>
